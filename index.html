@@ -1,0 +1,113 @@
+<div class="conteudo-container">
+    
+  <div class="linha">
+    <div class="rotulo">Fotografia</div>
+    <div class="separador"></div>
+    <div class="texto">
+      José Luís Ávila Silveira/Pedro Noronha e Costa; Observatório do Mar dos Açores; Secretaria Regional do Ambiente e Ação Climática; Carlos Duarte; Peter Museu; Helder Afonso; Amigos do Farol dos Capelinhos; AvistaVulcão - Casa da Missão; Azores UNESCO Global Geopark.
+    </div>
+  </div>
+
+  <div class="linha">
+    <div class="rotulo">Vídeo</div>
+    <div class="separador"></div>
+    <div class="texto">
+      Arquivo RTP; Gonçalo Tocha.
+    </div>
+  </div>
+
+  <div class="linha">
+    <div class="rotulo">Textos</div>
+    <div class="separador"></div>
+    <div class="texto">
+      Graça Ventura Moniz e Almeida; Judite Canha Fernandes.
+    </div>
+  </div>
+
+</div>
+
+/* --- CONFIGURAÇÃO VISUAL --- */
+body {
+  /* Fundo escuro APENAS para você conseguir ver no CodePen. 
+     O StoryMap vai ignorar isto se usar o iframe transparente, 
+     mas ajuda na edição. */
+  background-color: #222222; 
+  
+  color: #ffffff; /* Texto Branco */
+  font-family: 'Avenir Next', Arial, sans-serif;
+  margin: 0;
+  padding: 20px;
+}
+
+.conteudo-container {
+  max-width: 900px; /* Largura máxima segura */
+  width: 100%;
+  margin: 0 auto;
+}
+
+/* --- A ESTRUTURA DA LINHA --- */
+.linha {
+  display: flex;
+  flex-direction: row; /* Força ficar lado a lado */
+  align-items: stretch; /* Estica a linha laranja */
+  width: 100%;
+}
+
+/* --- COLUNA DA ESQUERDA (Categorias) --- */
+.rotulo {
+  /* Largura fixa para a esquerda */
+  width: 120px; 
+  min-width: 120px; /* Garante que não encolhe */
+  
+  text-align: right;
+  font-weight: bold;
+  font-size: 13px;
+  text-transform: uppercase;
+  color: #bbbbbb; /* Cinza claro */
+  
+  padding-right: 20px; /* Espaço até a linha laranja */
+  padding-top: 0px; 
+}
+
+/* --- A LINHA LARANJA --- */
+.separador {
+  width: 2px;
+  background-color: #e65100; /* Laranja */
+  margin-right: 20px; /* Espaço depois da linha */
+  flex-shrink: 0; /* Impede a linha de sumir */
+}
+
+/* --- COLUNA DA DIREITA (Texto) --- */
+.texto {
+  flex: 1; /* Ocupa todo o espaço restante */
+  font-size: 14px;
+  line-height: 1.6;
+  color: #ffffff; /* Branco puro */
+  padding-bottom: 25px; /* Espaço entre os blocos de texto */
+}
+
+/* Tira o espaço do último para ficar alinhado ao fim da linha */
+.linha:last-child .texto {
+  padding-bottom: 0;
+}
+
+/* --- AJUSTE PARA CELULAR --- */
+@media (max-width: 600px) {
+  .linha { flex-direction: column; }
+  
+  .rotulo { 
+      text-align: left; 
+      width: 100%; 
+      margin-bottom: 5px;
+      color: #e65100;
+  }
+  
+  .separador { 
+      width: 100%; 
+      height: 1px; 
+      margin-bottom: 10px; 
+      margin-right: 0;
+  }
+  
+  .texto { padding-bottom: 30px; }
+}
